@@ -12,8 +12,8 @@ const messages = [
         user: "person2",
         added: new Date(),
     }
-]
+];
 
-indexRouter.use("/", (req, res) => res.send("hello from index router"));
+indexRouter.use("/", (req, res) => res.render("index", {messages}));
 
 module.exports = indexRouter;

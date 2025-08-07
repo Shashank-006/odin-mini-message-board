@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Message Board</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <h1>The Message Board!</h1>
+        <div class="message-container">
+            <% messages.map(message => {%>
+                <div class="message">
+                    <div class="message-text"><%= message.text %></div>
+                    <div>By: <%= message.user %></div>
+                    <div>At: <%= message.added %></div>
+                </div>
+            <% }); %>
+        </div>
+    </body>
+</html>

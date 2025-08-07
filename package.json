@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/Shashank-006/odin-mini-message-board#readme",
   "dependencies": {
+    "ejs": "^3.1.10",
     "express": "^5.1.0"
   }
 }
