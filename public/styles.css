@@ -1,10 +1,24 @@
 body {
     background-color: beige;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    display: flex;
+    gap: 25px;
+    flex-direction: column;
 }
 
 h1 {
     text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(0, 9, 132);
+    text-align: center;
+    font-size: 32px;
+}
+
+a:hover {
+    color: rgb(0, 6, 87)
 }
 
 form {
@@ -19,11 +33,6 @@ form {
 
 form * {
     padding: 24px;
-}
-
-input {
-    max-height: 20px;
-    border-radius:12px;
 }
 
 button {
@@ -47,6 +56,34 @@ button:hover {
     border-radius: 15px;
     padding: 10px;
     transition: all 1s;
+}
+
+.message-block {
+    display: flex;
+    flex-direction: column;
+    padding-top: 0;
+    width: 80%;
+}
+
+.message-label {
+    text-align: center;
+}
+
+#username-input {
+    max-height: 20px;
+    border-radius:12px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 24px;
+}
+
+#message-input {
+    height: 200px;
+    min-width: 300px;
+    align-self: stretch;
+    border: 2px solid black;
+    border-radius: 6px;
+    font-size: 18px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .message:hover {

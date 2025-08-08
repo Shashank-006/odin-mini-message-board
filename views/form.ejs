@@ -2,12 +2,12 @@
 <form method="POST" action="/new">
     <div>Add a message to the board!</div>
     <div class="input">
-        <label for="username">Username: </label>
-        <input id="username">
+        <label for="username-input">Username: </label>
+        <input id="username-input" name="username">
     </div>
-    <div class="input">
-        <label for="password">Password: </label>
-        <input id="password">
+    <div class="message-block">
+        <label for="message-input" class="message-label">Message:</label>
+        <textarea id="message-input" name="message"></textarea>
     </div>
     <button>Submit!</button>
 </form>
