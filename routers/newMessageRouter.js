@@ -8,7 +8,7 @@ newMessageRouter.get("/", (req, res) => res.render("form"));
 
 newMessageRouter.post("/", (req, res) => {
     const { message, username } = req.body;
-    messages.push({text: message, user: username, added: new Date()});
+    messages.push({id: messages.length + 1, text: message, user: username, added: new Date()});
     res.redirect("/");
 });
 

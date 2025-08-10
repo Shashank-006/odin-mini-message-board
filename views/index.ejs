@@ -17,5 +17,9 @@
             <% }); %>
         </div>
         <a href="./new">Add a message!</a>
+        <script>
+            const messages = document.querySelectorAll(".message");
+            messages.forEach((message, i) => message.addEventListener("click", () => window.location.href = `./${i + 1}`));
+        </script>
     </body>
 </html>
