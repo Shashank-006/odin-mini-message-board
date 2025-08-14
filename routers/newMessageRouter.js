@@ -7,6 +7,6 @@ newMessageRouter.use(urlencoded({extended: true}));
 
 newMessageRouter.get("/", controllers.newGet);
 
-//newMessageRouter.post("/", controllers.newPost);
+newMessageRouter.post("/", controllers.newPost);
 
 module.exports = newMessageRouter;

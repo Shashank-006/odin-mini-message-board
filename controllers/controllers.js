@@ -4,11 +4,11 @@ function newGet(req, res) {
     res.render("form");
 }
 
-/*function newPost(req, res) {
-    const { message, username } = req.body;
-    messages.push({id: messages.length + 1, text: message, user: username, added: new Date()}); //TODO convert to db
+function newPost(req, res) {
+    const { username, message } = req.body;
+    queries.addMessage(username, message);
     res.redirect("/");
-}*/
+}
 
 async function indexGet(req, res) {
     const { rows } = await queries.selectAllMessages();
@@ -29,7 +29,7 @@ async function indexIdGet(req, res) {
 
 module.exports = {
     newGet,
-    //newPost,
+    newPost,
     indexGet,
     indexIdGet
 }

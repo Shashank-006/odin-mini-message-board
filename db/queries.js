@@ -10,7 +10,12 @@ async function selectAllMessages() {
     return messages;
 }
 
+async function addMessage(username, message) {
+    await pool.query("insert into messages (username, text, added) values ($1, $2, $3)", [username, message, new Date()]);
+}
+
 module.exports = {
     selectAllMessages,
-    selectMessage
+    selectMessage,
+    addMessage
 }
