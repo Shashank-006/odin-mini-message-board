@@ -1,5 +1,6 @@
 const { Router } = require("express");
 const indexRouter = Router();
+const controllers = require("../controllers/controllers.js");
 
 const messages = [
     {
@@ -16,14 +17,7 @@ const messages = [
     }
 ];
 
-indexRouter.get("/", (req, res) => res.render("index", {messages}));
-indexRouter.get("/:id", (req, res) => {
-    const { id } = req.params;
-    const message = messages.find(message => Number(id) === message.id);
-    if(!message) {
-        res.status(404).send("404 Not found :(");
-    }
-    res.render("message", {message})
-});
+indexRouter.get("/", controllers.indexGet);
+indexRouter.get("/:id", controllers.indexIdGet);
 
 module.exports = { indexRouter, messages};

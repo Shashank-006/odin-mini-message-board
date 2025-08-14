@@ -1,15 +1,12 @@
 const { Router, urlencoded } = require("express");
 const newMessageRouter = Router();
 const { indexRouter, messages } = require("./indexRouter.js");
+const controllers = require("../controllers/controllers.js");
 
 newMessageRouter.use(urlencoded({extended: true}));
 
-newMessageRouter.get("/", (req, res) => res.render("form"));
+newMessageRouter.get("/", controllers.newGet);
 
-newMessageRouter.post("/", (req, res) => {
-    const { message, username } = req.body;
-    messages.push({id: messages.length + 1, text: message, user: username, added: new Date()});
-    res.redirect("/");
-});
+newMessageRouter.post("/", controllers.newPost);
 
 module.exports = newMessageRouter;
