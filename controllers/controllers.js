@@ -17,18 +17,19 @@ async function indexGet(req, res) {
     res.render("index", {messages}); //TODO convert to db
 }
 
-/*function indexIdGet(req, res) {
+async function indexIdGet(req, res) {
     const { id } = req.params;
-    const message = messages.find(message => Number(id) === message.id); //TODO convert to db
-    if(!message) {
+    const { rows } = await queries.selectMessage(id);
+    console.log(rows);
+    if(rows.length != 1) {
         res.status(404).send("404 Not found :(");
     }
-    res.render("message", {message})
-}*/
+    res.render("message", {message: rows[0]});
+}
 
 module.exports = {
     newGet,
     //newPost,
     indexGet,
-    //indexIdGet
+    indexIdGet
 }

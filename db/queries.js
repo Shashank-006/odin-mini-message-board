@@ -1,11 +1,8 @@
 const pool = require("./pool.js");
 
 async function selectMessage(messageId) {
-
-}
-
-const selectAllMessagesPromise = () => {
-    return pool.query("select * from messages");
+    const message = await pool.query("select * from messages where id = $1", [messageId]);
+    return message;
 }
 
 async function selectAllMessages() {
@@ -15,5 +12,5 @@ async function selectAllMessages() {
 
 module.exports = {
     selectAllMessages,
-    selectAllMessagesPromise,
+    selectMessage
 }
